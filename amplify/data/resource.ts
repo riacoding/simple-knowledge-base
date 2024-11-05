@@ -4,7 +4,7 @@ const schema = a.schema({
   noop: a
     .query()
     .returns(a.string())
-    .authorization((allow) => [allow.guest()])
+    .authorization((allow) => [allow.publicApiKey()])
     .handler(
       a.handler.custom({
         dataSource: 'BedrockHTTPDS',
@@ -16,9 +16,10 @@ const schema = a.schema({
     .arguments({
       text: a.string().required(),
       sessionId: a.string(),
+      prompt: a.string(),
     })
     .returns(a.ref('BedrockResponse'))
-    .authorization((allow) => [allow.publicApiKey(), allow.authenticated()])
+    .authorization((allow) => [allow.publicApiKey()])
     .handler(
       a.handler.custom({
         dataSource: 'BedrockHTTPDS',
@@ -29,11 +30,11 @@ const schema = a.schema({
     text: a
       .string()
       .required()
-      .authorization((allow) => [allow.publicApiKey(), allow.authenticated()]),
+      .authorization((allow) => [allow.publicApiKey()]),
     sessionId: a
       .string()
       .required()
-      .authorization((allow) => [allow.publicApiKey(), allow.authenticated()]),
+      .authorization((allow) => [allow.publicApiKey()]),
   }),
 })
 

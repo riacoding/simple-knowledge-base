@@ -1,6 +1,5 @@
-Name,Services,Phone Number,Email
-Simone Richie,Math tutor,555-555-5555,de1ed.sr@inbox.testmail.app
-John Doe,"Plumbing,Carpentry",444-444-44444,de1ed.jd@inbox.testmail.app
-Jane Doe,"Tiling,painting",777-777-7777,de1ed.janed@inbox.testmail.app
-Jamie Weiss,"Dog Walking,Pet Sitting",999-999-9999,de1ed.jw@inbox.testmail.app
-Peter Green,Carpenter,666-666-6666,de1ed.pg@inbox.testmail.app
+Command,Description,function,Parameters,Prompt
+create invoice, Create a client invoice,createInvoice,[clientId, amount,product, dueDate], `Ok, you want to ${description} for ${parameters.clientId} in the amount of $ ${parameters.amount} for a {parameters.product} due on ${paramaters.dueDate}?`
+create a gallery, Create a client gallery,createGallery [clientFirstName, clientLastName], `Ok, you want to ${description} for ${parameters.clientName}?`
+add a landing page, Add a landing page to the site,createLanding [pageName], `Ok, you want to ${description} for ${parameters.pageName}?`
+
